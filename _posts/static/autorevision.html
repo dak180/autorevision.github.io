@@ -1,0 +1,1205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.9" />
+<title>AUTOREVISION(1)</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; vertical-align: text-bottom; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install();
+/*]]>*/
+</script>
+</head>
+<body class="manpage">
+<div id="header">
+<h1>
+AUTOREVISION(1) Manual Page
+</h1>
+<h2>NAME</h2>
+<div class="sectionbody">
+<p>autorevision -
+   extract current-revision metadata from version-control repositories
+</p>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_synopsis">SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><strong>autorevision</strong> {<strong>-t</strong> &lt;output-type&gt; | <strong>-s</strong> &lt;symbol&gt;} [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]] [<strong>-U</strong>] [<strong>-V</strong>]</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description">DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Extracts metadata about the head revision from your repository.</p></div>
+<div class="paragraph"><p>This program is meant to be used by project build systems to extract
+properties that can be used in software version strings. It can emit
+source files containing variable and macro definitions suitable for
+use with C, C++, Java, sh, Python, Perl, Mac info.plist and other
+types of files (see below for the full list).</p></div>
+<div class="paragraph"><p>The generated source is written to standard output.</p></div>
+<div class="paragraph"><p>This program can normally be called from anywhere within a repository
+copy.  Under bzr the copy must be of a branch, not a full multibranch
+repository.  Under Subversion it must be called under a repository
+checkout, not the repository itself.</p></div>
+<div class="paragraph"><p>If you specify a cache file, then when <strong>autorevision</strong> is run where no
+repository can be recognized, the values from the cache file will be
+used instead.  If a repository can be recognized, the cache is
+rewritten. This feature makes it possible for your build to run
+from an unpacked tarball that includes the cache file.</p></div>
+<div class="sect2">
+<h3 id="_valid_repository_types">Valid Repository Types</h3>
+<div class="paragraph"><p><strong>Git</strong>: A version greater than 1.7.2.3 is recommended.</p></div>
+<div class="paragraph"><p><strong>Mercurial</strong>: A version greater than 1.6 is recommended.</p></div>
+<div class="paragraph"><p><strong>Subversion</strong>: Any production version.</p></div>
+<div class="paragraph"><p><strong>Bazaar</strong>: Any production version.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_valid_output_types">Valid Output Types</h3>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<strong>clojure</strong>
+</dt>
+<dd>
+<p>
+A clojure source file setting clojure variables.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>h</strong>
+</dt>
+<dd>
+<p>
+A header file suitable for C/C++.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>hpp</strong>
+</dt>
+<dd>
+<p>
+Alternate C++ header file with namespace.  Namespace is assigned
+from VCS_BASENAME.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>ini</strong>
+</dt>
+<dd>
+<p>
+A ini source file setting ini variables.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>java</strong>
+</dt>
+<dd>
+<p>
+A Java source file setting class properties.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>javaprop</strong>
+</dt>
+<dd>
+<p>
+A Java properties file (like ini); useful when META-INF is readable in
+Java.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>js</strong>
+</dt>
+<dd>
+<p>
+A javascript source file setting javascript variables.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>json</strong>
+</dt>
+<dd>
+<p>
+A JSON format file.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>lua</strong>
+</dt>
+<dd>
+<p>
+A lua source file setting lua variables.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>m4</strong>
+</dt>
+<dd>
+<p>
+An m4 source file defining m4 macros.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>matlab</strong>
+</dt>
+<dd>
+<p>
+Matlab output.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>octave</strong>
+</dt>
+<dd>
+<p>
+Octave output.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>php</strong>
+</dt>
+<dd>
+<p>
+A PHP source file setting PHP variables.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>pl</strong>
+</dt>
+<dd>
+<p>
+A Perl source file setting Perl variables  (<strong><code>perl</code></strong> is an acceptable
+synonym).
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>py</strong>
+</dt>
+<dd>
+<p>
+A Python source file setting Python variables (<strong><code>python</code></strong> is an
+acceptable synonym).
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>rpm</strong>
+</dt>
+<dd>
+<p>
+A RPM spec file format setting spec file macros.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>scheme</strong>
+</dt>
+<dd>
+<p>
+A scheme source file setting scheme variables.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>sh</strong>
+</dt>
+<dd>
+<p>
+A text file suitable for including from a bash script.  Will work with
+Ruby.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>sql</strong>
+</dt>
+<dd>
+<p>
+A sql table definition and insert line to populate it with version information.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>swift</strong>
+</dt>
+<dd>
+<p>
+A Swift source file setting Swift global constants.<br />
+Unless set <strong>VCS_EXTRA</strong> and any symbols that are are missing because of
+repository support are set to <code>nil</code>.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>tex</strong>
+</dt>
+<dd>
+<p>
+A TeX source file defining TeX macros.  Note that the symbols are
+given different names since the underscore has a special meaning in
+TeX. For example, VCS_SHORT_HASH is renamed to \vcsShortHash.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>xcode</strong>
+</dt>
+<dd>
+<p>
+A header like output for use with xcode to populate info.plist strings.
+</p>
+</dd>
+</dl></div>
+</div>
+<div class="sect2">
+<h3 id="_valid_symbol_names">Valid Symbol Names</h3>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<strong>VCS_TYPE</strong>
+</dt>
+<dd>
+<p>
+The repository type - "git", "hg", "bzr", or "svn".
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_BASENAME</strong>
+</dt>
+<dd>
+<p>
+The basename of the directory root.  For most VCSes this will simply
+be the basename of the repository root directory.  For Subversion,
+<strong>autorevision</strong> will navigate up though trunk, branches, and tags
+directories to find the actual root.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_NUM</strong>
+</dt>
+<dd>
+<p>
+A count of revisions between the current one and the initial
+one; useful for reporting build numbers.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_UUID</strong>
+</dt>
+<dd>
+<p>
+A universally unique identifier, generated from the root commit in git
+and hg; for svn it uses the supplied UUID.<br />
+For git we choose the oldest commit if there is more than one.<br />
+Not currently implemented for bzr.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_DATE</strong>
+</dt>
+<dd>
+<p>
+The date of the most recent commit in true ISO-8601/RFC3339
+format, including seconds.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_BRANCH</strong>
+</dt>
+<dd>
+<p>
+The name of the branch of the commit graph that was selected when
+autoversion was run.<br />
+Under git, this will normally be the shortname of the current branch
+(the asterisked line in the output of of "git branch") except that
+when the branch doesn&#8217;t have a shortname it will be a full
+refspec.<br />
+Under hg the feature that is called <em>branches</em> is actually a sort of
+graph coloring (multiple heads can have the same branch name) so this
+symbol is filled with the current bookmark if it exists, with the
+current branch name as a fallback.<br />
+Under Subversion this will normally be either <em>trunk</em> or the basename
+of some branch or tag subdirectory, depending on where <strong>autoversion</strong>
+was run.<br />
+Under bzr, this is the nick of the branch you are on.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_TAG</strong>
+</dt>
+<dd>
+<p>
+The name of the most recent tag ancestral to the current commit.<br />
+Empty under Subversion.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_TICK</strong>
+</dt>
+<dd>
+<p>
+A count of commits since most recent tag ancestral to the current
+commit or an alias of <strong>VCS_NUM</strong> if there are no prior tags.<br />
+Empty under Subversion.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_EXTRA</strong>
+</dt>
+<dd>
+<p>
+A symbol set aside specifically to be set by the user through the
+environment or via scripts.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_FULL_HASH</strong>
+</dt>
+<dd>
+<p>
+A full unique identifier for the current revision.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_SHORT_HASH</strong>
+</dt>
+<dd>
+<p>
+A shortened version of <strong>VCS_FULL_HASH</strong>, but <strong>VCS_FULL_HASH</strong> if it
+cannot be shortened.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VCS_WC_MODIFIED</strong>
+</dt>
+<dd>
+<p>
+Set to <code>1</code> if the current working directory has been modified and <code>0</code>
+if not.  If the output language has native Boolean literals, true will
+mean modified and false unmodified.  The C/C++ output is left as
+numeric so the preprocessor can test it.<br />
+<em>Untracked files are not ignored; see <strong><code>-U</code></strong> for details.</em>
+</p>
+</dd>
+</dl></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options">OPTIONS</h2>
+<div class="sectionbody">
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<strong>-t</strong> <em>&lt;output-type&gt;</em>
+</dt>
+<dd>
+<p>
+Sets the output type.  It is required unless <strong><code>-s</code></strong> is specified; both
+<strong><code>-t</code></strong> and <strong><code>-s</code></strong> cannot be used in the same invocation.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>-s</strong> <em>&lt;symbol&gt;</em>
+</dt>
+<dd>
+<p>
+Changes the reporting behavior; instead of emitting a symbol file to
+stdout, only the value of that individual symbol will be reported.  It
+is required unless <strong><code>-t</code></strong> is specified; both <strong><code>-t</code></strong> and <strong><code>-s</code></strong> cannot
+be used in the same invocation.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>-o</strong> <em>&lt;cache-file&gt;</em>
+</dt>
+<dd>
+<p>
+Sets the name of the cache file.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>-f</strong>
+</dt>
+<dd>
+<p>
+Forces the use cache data even when in a repo; useful if you want to
+preprocess the data before final output.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>-U</strong>
+</dt>
+<dd>
+<p>
+Causes untracked files to be checked when determining if the
+working copy is modified <em>for Subversion only</em>.  While this is the
+default behavior for all other repository types it is off by default
+for Subversion because of speed concerns.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>-V</strong>
+</dt>
+<dd>
+<p>
+Emits the autorevision version and exits.
+</p>
+</dd>
+</dl></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bugs">BUGS</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The bzr extractor is not very well tested as yet.</p></div>
+<div class="paragraph"><p>When a git repo is actually a git-svn remote, this tool tries to do
+the right thing and return a Subversion revision.  The bug is that the
+detector code for this case is somewhat unreliable; you will get the
+hash instead if your configuration doesn&#8217;t use svn-remote.svn.url.</p></div>
+<div class="paragraph"><p>Nested repositories, particularly repositories of different types,
+<em>may</em> result in incorrect and unintended behavior.</p></div>
+<div class="paragraph"><p>Unpacking a tarball into a repository <em>will</em> result in incorrect and
+unintended behavior.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_notes">Notes</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Development of autorevision is carried out at
+<a href="https://github.com/Autorevision/autorevision">https://github.com/Autorevision/autorevision</a></p></div>
+<div class="paragraph"><p>Tarballs and HTML rendered docs are also hosted at
+<a href="http://www.catb.org/esr/autorevision/">http://www.catb.org/esr/autorevision/</a></p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_authors">AUTHORS</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>dak180 &lt;<a href="mailto:dak180@users.sf.net">dak180@users.sf.net</a>&gt;: concept, bash/C/C++/XCode/PHP/ini
+support, git and hg extraction.<br />
+Eric S. Raymond &lt;<a href="mailto:esr@thyrsus.com">esr@thyrsus.com</a>&gt;: Python/Perl/lua/m4 support, svn and
+bzr extraction, git-svn support, CLI design, man page.</p></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2015-01-23 17:56:30 EST
+</div>
+</div>
+</body>
+</html>
