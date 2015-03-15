@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: about/
 ---
 
 A shell script for extracting revision information useful in release/build scripting from repositories.
