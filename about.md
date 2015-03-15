@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+A shell script for extracting revision information useful in release/build scripting from repositories.
 
-### More Information
+Supported repository types include `git`, `hg`, `bzr`, and `svn`. The record can be emitted in a ready-to-use form for `C`, `C++`, `Java`, `bash`, `Python`, `Perl`, `lua`, `php`, `ini` and others.
 
-A place to include any other types of information that you'd like to include about yourself.
+Emitted information includes the ID of the most recent commit, its branch, its date, and several other useful pieces of meta-information.
 
-### Contact me
+There is support for reading and writing a cache file so autorevision will remain useful during a build from an unpacked distribution tarball.
 
-[email@domain.com](mailto:email@domain.com)
+See the [manual page](/man), included in the distribution, for invocation details.
+
+You can check out examples of the different output that autorevision can produce in [examples](https://github.com/Autorevision/autorevision/tree/master/examples).
