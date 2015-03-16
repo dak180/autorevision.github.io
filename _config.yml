@@ -40,7 +40,7 @@ google_analytics: UA-714254-6
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: https://autorevision.github.io/
+url: https://autorevision.github.io
 
 # do not include protocol, just the domain
 enforce_ssl: autorevision.github.io
