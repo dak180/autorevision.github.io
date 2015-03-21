@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/dak180
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://autorevision.github.io
+  * I am dak180 (https://keybase.io/dak180) on keybase.
+  * I have a public key with fingerprint A16E 4FE1 BFE8 82DE 9D6E  28AD 0044 B6E7 2C41 4317
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "a16e4fe1bfe882de9d6e28ad0044b6e72c414317",
+            "host": "keybase.io",
+            "key_id": "0044b6e72c414317",
+            "kid": "01010306f102fd49f354c7ced2238390cf6e264a88b2bd2602ee7fa86ed65835cfbd0a",
+            "uid": "2eb3720e252b9cad2f1e310637a8da00",
+            "username": "dak180"
+        },
+        "service": {
+            "hostname": "autorevision.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1426899162,
+    "expire_in": 157680000,
+    "prev": "0924a0b1dcd179f7d9a6d71feb2aef0abea6128fa14a85cba5da5825f3446dbd",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Comment: GPGTools - http://gpgtools.org
+
+owNCWmg2MUFZJlNZuIzWDwACNv/////////////7////////////////////////
+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
+=bl4d
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dak180
+
+==================================================================
