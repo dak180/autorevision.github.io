@@ -929,14 +929,6 @@ Ruby.
 </p>
 </dd>
 <dt class="hdlist1">
-<strong>sql</strong>
-</dt>
-<dd>
-<p>
-A sql table definition and insert line to populate it with version information.
-</p>
-</dd>
-<dt class="hdlist1">
 <strong>swift</strong>
 </dt>
 <dd>
@@ -1136,8 +1128,8 @@ Sets the name of the cache file.
 </dt>
 <dd>
 <p>
-Forces the use cache data even when in a repo; useful if you want to
-preprocess the data before final output.
+Forces the use of cache data even when in a repo; useful for speeding
+up subsequent runs if more than one output format is needed.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -1147,7 +1139,7 @@ preprocess the data before final output.
 <p>
 Causes untracked files to be checked when determining if the
 working copy is modified <em>for Subversion only</em>.  While this is the
-default behavior for all other repository types it is off by default
+default behavior for all other repository types, it is off by default
 for Subversion because of speed concerns.
 </p>
 </dd>
@@ -1165,7 +1157,7 @@ Emits the autorevision version and exits.
 <div class="sect1">
 <h2 id="_bugs">BUGS</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>The bzr extractor is not very well tested as yet.</p></div>
+<div class="paragraph"><p>The bzr extractor is not very well tested.</p></div>
 <div class="paragraph"><p>When a git repo is actually a git-svn remote, this tool tries to do
 the right thing and return a Subversion revision.  The bug is that the
 detector code for this case is somewhat unreliable; you will get the
@@ -1181,7 +1173,7 @@ unintended behavior.</p></div>
 <div class="sectionbody">
 <div class="paragraph"><p>Development of autorevision is carried out at
 <a href="https://github.com/Autorevision/autorevision">https://github.com/Autorevision/autorevision</a></p></div>
-<div class="paragraph"><p>Tarballs and HTML rendered docs can be found at
+<div class="paragraph"><p>HTML rendered docs and usage examples can be found at
 <a href="https://autorevision.github.io/">https://autorevision.github.io/</a></p></div>
 </div>
 </div>
@@ -1198,7 +1190,7 @@ bzr extraction, git-svn support, CLI design, man page.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-15 23:19:52 EDT
+Last updated 2015-07-31 21:12:43 EDT
 </div>
 </div>
 </body>
