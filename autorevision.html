@@ -747,7 +747,9 @@ AUTOREVISION(1) Manual Page
 <div class="sect1">
 <h2 id="_synopsis">SYNOPSIS</h2>
 <div class="sectionbody">
-<div class="paragraph"><p><strong>autorevision</strong> {<strong>-t</strong> &lt;output-type&gt; | <strong>-s</strong> &lt;symbol&gt;} [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]] [<strong>-U</strong>] [<strong>-V</strong>]</p></div>
+<div class="paragraph"><p><strong>autorevision</strong> <strong>-t</strong> &lt;output-type&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-U</strong>]</p></div>
+<div class="paragraph"><p><strong>autorevision</strong> <strong>-s</strong> &lt;symbol&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-U</strong>]</p></div>
+<div class="paragraph"><p><strong>autorevision</strong> <strong>-V</strong></p></div>
 </div>
 </div>
 <div class="sect1">
@@ -755,11 +757,11 @@ AUTOREVISION(1) Manual Page
 <div class="sectionbody">
 <div class="paragraph"><p>Extracts metadata about the head revision from your repository.</p></div>
 <div class="paragraph"><p>This program is meant to be used by project build systems to extract
-properties that can be used in software version strings. It can emit
-source files containing variable and macro definitions suitable for
-use with C, C++, Java, sh, Python, Perl, Mac info.plist and other
-types of files (see below for the full list).</p></div>
-<div class="paragraph"><p>The generated source is written to standard output.</p></div>
+properties that can be used in version strings. It can emit source
+files containing variable and macro definitions suitable for use with
+C, C++, Java, Mac info.plist, sh, Python, Perl and many other types of
+files (see below for the full list).</p></div>
+<div class="paragraph"><p>The generated source is written to the standard output.</p></div>
 <div class="paragraph"><p>This program can normally be called from anywhere within a repository
 copy.  Under bzr the copy must be of a branch, not a full multibranch
 repository.  Under Subversion it must be called under a repository
@@ -767,8 +769,8 @@ checkout, not the repository itself.</p></div>
 <div class="paragraph"><p>If you specify a cache file, then when <strong>autorevision</strong> is run where no
 repository can be recognized, the values from the cache file will be
 used instead.  If a repository can be recognized, the cache is
-rewritten. This feature makes it possible for your build to run
-from an unpacked tarball that includes the cache file.</p></div>
+rewritten. This feature makes it possible for your build to run from
+an unpacked tarball that includes the cache file.</p></div>
 <div class="sect2">
 <h3 id="_valid_repository_types">Valid Repository Types</h3>
 <div class="paragraph"><p><strong>Git</strong>: A version greater than 1.7.2.3 is recommended.</p></div>
@@ -976,8 +978,8 @@ The repository type - "git", "hg", "bzr", or "svn".
 <p>
 The basename of the directory root.  For most VCSes this will simply
 be the basename of the repository root directory.  For Subversion,
-<strong>autorevision</strong> will navigate up though trunk, branches, and tags
-directories to find the actual root.
+<strong>autorevision</strong> will attempt to navigate up though trunk, branches, and
+tags directories to find the actual root.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -1190,7 +1192,8 @@ bzr extraction, git-svn support, CLI design, man page.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-07-31 21:12:43 EDT
+Version 1.14<br />
+Last updated 2015-08-25 17:48:36 EDT
 </div>
 </div>
 </body>
