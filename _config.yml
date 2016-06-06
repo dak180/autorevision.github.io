@@ -6,7 +6,9 @@
 name: Autorevision
 
 # Short bio or description (displayed in the header)
-description: Extracts revision metadata from your VCS repository
+description: Extracts revision metadata from your VCS repository.
+
+author: dak180
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars2.githubusercontent.com/u/2539994?v=3&s=140
@@ -75,6 +77,7 @@ sass:
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-redirect-from # redirect pages.
+  - jekyll-seo-tag # head tags
 
 # Exclude these files from your production _site
 exclude:
