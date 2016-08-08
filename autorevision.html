@@ -790,6 +790,16 @@ A clojure source file setting clojure variables.
 </p>
 </dd>
 <dt class="hdlist1">
+<strong>c</strong>
+</dt>
+<dd>
+<p>
+A C/C++ source file.<br />
+<code>autorevision_declr.h</code> in the contribs dir is provided for use with
+this output.
+</p>
+</dd>
+<dt class="hdlist1">
 <strong>h</strong>
 </dt>
 <dd>
@@ -1061,6 +1071,18 @@ environment or via scripts.
 </p>
 </dd>
 <dt class="hdlist1">
+<strong>VCS_ACTION_STAMP</strong>
+</dt>
+<dd>
+<p>
+An "action stamp" consists of an RFC3339 timestamp in Zulu time,
+followed by an exclamation point, followed by an RFC822 address
+(technically, an "addr-spec" as defined in 6.1).<br />
+For svn the second part is simply the author name.<br />
+Not currently implemented for bzr.
+</p>
+</dd>
+<dt class="hdlist1">
 <strong>VCS_FULL_HASH</strong>
 </dt>
 <dd>
@@ -1185,15 +1207,16 @@ unintended behavior.</p></div>
 <div class="paragraph"><p>dak180 &lt;<a href="mailto:dak180@users.sf.net">dak180@users.sf.net</a>&gt;: concept, bash/C/C++/XCode/PHP/ini
 support, git and hg extraction.<br />
 Eric S. Raymond &lt;<a href="mailto:esr@thyrsus.com">esr@thyrsus.com</a>&gt;: Python/Perl/lua/m4 support, svn and
-bzr extraction, git-svn support, CLI design, man page.</p></div>
+bzr extraction, git-svn support, CLI design, man page.<br />
+See AUTHORS.txt for a full list in order of number of contributions.</p></div>
 </div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Version 1.14<br />
-Last updated 2015-08-25 17:48:36 EDT
+Version 1.15<br />
+Last updated 2016-05-06 09:27:33 EDT
 </div>
 </div>
 </body>
