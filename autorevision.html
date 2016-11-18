@@ -747,8 +747,8 @@ AUTOREVISION(1) Manual Page
 <div class="sect1">
 <h2 id="_synopsis">SYNOPSIS</h2>
 <div class="sectionbody">
-<div class="paragraph"><p><strong>autorevision</strong> <strong>-t</strong> &lt;output-type&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-U</strong>]</p></div>
-<div class="paragraph"><p><strong>autorevision</strong> <strong>-s</strong> &lt;symbol&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-U</strong>]</p></div>
+<div class="paragraph"><p><strong>autorevision</strong> <strong>-t</strong> &lt;output-type&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-e</strong> &lt;name&gt;] [<strong>-U</strong>]</p></div>
+<div class="paragraph"><p><strong>autorevision</strong> <strong>-s</strong> &lt;symbol&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-e</strong> &lt;name&gt;] [<strong>-U</strong>]</p></div>
 <div class="paragraph"><p><strong>autorevision</strong> <strong>-V</strong></p></div>
 </div>
 </div>
@@ -797,6 +797,22 @@ A clojure source file setting clojure variables.
 A C/C++ source file.<br />
 <code>autorevision_declr.h</code> in the contribs dir is provided for use with
 this output.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>cmake</strong>
+</dt>
+<dd>
+<p>
+A cmake script file.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>csharp</strong>
+</dt>
+<dd>
+<p>
+C# file with Autorevision class
 </p>
 </dd>
 <dt class="hdlist1">
@@ -946,7 +962,7 @@ Ruby.
 <dd>
 <p>
 A Swift source file setting Swift global constants.<br />
-Unless set <strong>VCS_EXTRA</strong> and any symbols that are are missing because of
+Unless set <strong>VCS_EXTRA</strong> and any symbols that are missing because of
 repository support are set to <code>nil</code>.
 </p>
 </dd>
@@ -1029,7 +1045,7 @@ format, including seconds.
 The name of the branch of the commit graph that was selected when
 autoversion was run.<br />
 Under git, this will normally be the shortname of the current branch
-(the asterisked line in the output of of "git branch") except that
+(the asterisked line in the output of "git branch") except that
 when the branch doesn&#8217;t have a shortname it will be a full
 refspec.<br />
 Under hg the feature that is called <em>branches</em> is actually a sort of
@@ -1148,6 +1164,15 @@ Sets the name of the cache file.
 </p>
 </dd>
 <dt class="hdlist1">
+<strong>-e</strong> <em>&lt;name&gt;</em>
+</dt>
+<dd>
+<p>
+Sets the output name of <strong>VCS_EXTRA</strong><br />
+Defaults to <code>VCS_EXTRA</code>.
+</p>
+</dd>
+<dt class="hdlist1">
 <strong>-f</strong>
 </dt>
 <dd>
@@ -1215,8 +1240,8 @@ See AUTHORS.txt for a full list in order of number of contributions.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Version 1.15<br />
-Last updated 2016-05-06 09:27:33 EDT
+Version 1.16<br />
+Last updated 2016-11-15 10:38:53 EST
 </div>
 </div>
 </body>
