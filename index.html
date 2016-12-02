@@ -16,12 +16,4 @@ layout: default
     </article>
   {% endfor %}
 </div>
-<div class="posts" id="releases">
-<!--
-	{{ site.github.public_repositories[0] | inspect }}
-	{% for release in site.github.public_repositories.repository[autorevision].releases limit:5 %}
-	## {{ release.name }}
-	{{ release.body | markdownify }}
-	{% endfor %}
--->
-</div>
+{% include releases.html %}
