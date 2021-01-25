@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
     "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="generator" content="AsciiDoc 8.6.9" />
+<meta name="generator" content="AsciiDoc 8.6.10" />
 <title>AUTOREVISION(1)</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
@@ -747,8 +748,8 @@ AUTOREVISION(1) Manual Page
 <div class="sect1">
 <h2 id="_synopsis">SYNOPSIS</h2>
 <div class="sectionbody">
-<div class="paragraph"><p><strong>autorevision</strong> <strong>-t</strong> &lt;output-type&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-e</strong> &lt;name&gt;] [<strong>-U</strong>] [<strong>-q</strong>]</p></div>
-<div class="paragraph"><p><strong>autorevision</strong> <strong>-s</strong> &lt;symbol&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-e</strong> &lt;name&gt;] [<strong>-U</strong>] [<strong>-q</strong>]</p></div>
+<div class="paragraph"><p><strong>autorevision</strong> <strong>-t</strong> &lt;output-type&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-e</strong> &lt;name&gt;] [<strong>-U</strong>] [<strong>-C</strong> &lt;path&gt;] [<strong>-q</strong>]</p></div>
+<div class="paragraph"><p><strong>autorevision</strong> <strong>-s</strong> &lt;symbol&gt; [<strong>-o</strong> &lt;cache-file&gt; [<strong>-f</strong>]&#8201;] [<strong>-e</strong> &lt;name&gt;] [<strong>-U</strong>] [<strong>-C</strong> &lt;path&gt;] [<strong>-q</strong>]</p></div>
 <div class="paragraph"><p><strong>autorevision</strong> <strong>-V</strong></p></div>
 </div>
 </div>
@@ -1224,6 +1225,16 @@ for Subversion because of speed concerns.
 </p>
 </dd>
 <dt class="hdlist1">
+<strong>-C</strong> <em>&lt;path&gt;</em>
+</dt>
+<dd>
+<p>
+Change working directory to given path. This allows autorevision to extract
+metadata from repositories found at a specific path to support VPATH or
+out-of-source builds.
+</p>
+</dd>
+<dt class="hdlist1">
 <strong>-q</strong>
 </dt>
 <dd>
@@ -1279,8 +1290,9 @@ See AUTHORS.txt for a full list in order of number of contributions.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Version 1.21<br />
-Last updated 2017-09-30 14:51:47 EDT
+Version 1.22<br />
+Last updated
+ 2021-01-25
 </div>
 </div>
 </body>
